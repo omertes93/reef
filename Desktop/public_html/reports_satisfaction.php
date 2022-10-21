@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include 'include/helper.php';
 include 'include/db.inc.php';
 include 'views/header.php';
@@ -9,73 +10,143 @@ include 'views/footer.php';
 $sql = "SELECT * FROM customers_survey";
 $result = mysqli_query($conn, $sql);
 
+$datas_activities = [];
+$datas_management = [];
+$datas_gear = [];
+$datas_wating = [];
+$datas_crew = [];
+$datas_customer_id = [];
 
 
-
-$datas = [];
 $query = "SELECT * FROM customers_survey";
 $result = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_array($result)) {
-    $datas[] = $row["activities_level"]; 
+    $datas_activities[] = $row["activities_level"];
+    $datas_management[] = $row["management_level"];
+    $datas_gear[] = $row["gear_level"];
+    $datas_wating[] = $row["wating_level"];
+    $datas_crew[] = $row["crew_level"];
+    $datas_customer_id[] = $row["customer_id"];
+    
 }
-print_r($datas);
+
 
 ?>
 
 <html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
 <body>
-
-<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-
 <script>
-var xValues = [1, 2, 3, 4, 5];
 
-var yValues = <?php echo json_encode($datas); ?>;
-
-var count_array= [];
-for (var i =0;i<yValues.length;i++)
-{
-   
-        j=0;
-        for (var j =0;j<yValues.length;j++)
-        {
-            if(i+1<yValues.length)
-            {
-                if (yValues[j]== i+1)
-                 { 
-                    count_array[i]++;
-                 }
-            }
-        }
-    
+//1activities
+var array = <?php echo json_encode($datas_activities); ?>;
+var act_sum=0;
+for(var i=0; i<array.length; i++){
+    act_sum += parseInt(array[i]);
 }
-  
-for (var m =0;m<count_array.length;m++)
-{
-    yValues[m]= count_array[m];
+var act_avg = act_sum/array.length;
+
+
+
+//2management
+var array = <?php echo json_encode($datas_management); ?>;
+var mng_sum=0;
+for(var i=0; i<array.length; i++){
+    mng_sum += parseInt(array[i]);
 }
+var mng_avg = mng_sum/array.length;
 
-var barColors = ["pink", "green","blue","orange","brown"];
 
-new Chart("myChart", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "שביעות רצון מפעילויות המועדון"
-    }
-  }
-});
+//3crew
+var array = <?php echo json_encode($datas_crew); ?>;
+var crew_sum=0;
+for(var i=0; i<array.length; i++){
+    crew_sum += parseInt(array[i]);
+}
+var crew_avg = crew_sum/array.length;
+
+
+//4gear
+var array = <?php echo json_encode($datas_gear); ?>;
+var gear_sum=0;
+for(var i=0; i<array.length; i++){
+    gear_sum += parseInt(array[i]);
+}
+var gear_avg = gear_sum/array.length;
+
+
+
+//5wating
+var array = <?php echo json_encode($datas_wating); ?>;
+var wating_sum=0;
+for(var i=0; i<array.length; i++){
+    wating_sum += parseInt(array[i]);
+}
+var wating_avg = wating_sum/array.length;
+
 </script>
+    <div style="text-align: center;">
+                        <h2>ממוצע סקר שביעות רצון</h2>
+                                <br>
+                                <h3>טווח נתונים לקליטה בין 1 ל 6</h3>
+                                <br>  
+    </div>
+    <table>
+        <tr>
+                <div>
+                   
+                    <br>
+                    <?php
+                    if( isset( $message )) {
+                        echo '<p class="success">'.$message.'</p>';
+                    } else if( isset( $error )) {
+                        echo '<p class="warning"">'.$error.'</p>';
+                    }
+                    ?>
+                    <?php
+                    $levels = $conn->query("SELECT * FROM `levels`");
+                    
+                    ?>
+                    
+                    <form action="satisfaction.php" method="post">
+                       
+                       <table style="width: 98%;" border="1">
+                        <tr>
+                        <th>שאלה</th>
+                        <th>ממוצע</th>
+                       
+                        </tr>
+                             <tr>
+                               <td style="text-align: right;">שביעות רצון מפעילויות המועדון:</td>
+                               <td><script>document.write(act_avg)</script></td>                                
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">שביעות רצון מהנהלת המועדון:</td>
+                               <td><script>document.write(mng_avg)</script></td>       
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">שביעות רצון מציוד המועדון:</td>
+                                <td><script>document.write(gear_avg)</script></td>
+                            </tr>
+                        
+                            <tr>
+                                <td style="text-align: right;">שביעות רצון מזמני ההמתנה במועדון:</td>
+                                    <td><script>document.write(wating_avg)</script></td>
+                             </tr>
+                             <tr>
+                                <td style="text-align: right;">שביעות רצון מצוות המועדון:</td>
+                                    <td><script>document.write(crew_avg)</script></td>
+
+                             
+                        </table>
+
+                    </form>
+                    <a href="reports.php" class="button">חזרה</a>
+                </div>
+            </td>
+        </tr>
+    </table>
 
 </body>
 </html>
+
