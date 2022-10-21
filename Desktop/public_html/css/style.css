@@ -1,0 +1,176 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    background: url('../images/surfing-926822_1920.jpg');
+    background-size: cover;
+    font-size: 18px;
+	overflow-x: hidden;
+}
+.error{
+    color: red;
+}
+
+.success{
+    color: blue;
+}
+.button{
+    background-color: #5497A7;
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: inherit;
+    display: inline-block;
+    text-decoration: none;
+}
+.button:hover{
+    background-color: #4da6a7;
+}
+.warning{
+    background-color: #dd2222;
+}
+.warning:hover{
+    background-color: #ee2222;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+input[type="email"],
+select{
+    padding: 8px 5px;
+    width: 100%;
+}
+
+#wrapper{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0,0,0, 0.5);
+    max-width: 1000px;
+    margin: 20px auto 20px auto;
+    min-height: 75vh; /* Viewport Height*/
+    position: relative;
+    background-color: #78CAD2;
+}
+
+
+#header{
+    margin-bottom: 50px;
+}
+#small-logo{
+    text-align: center;
+}
+.side-nav{
+    list-style: none;
+    margin-top: 50px;
+	
+}
+.side-nav li{
+    margin-bottom: 20px;
+}
+.menu-link{
+    display:inline-block;
+    padding: 4% 15%;
+    text-align: center;
+    border: 2px solid #333;
+    border-radius: 7px;
+    text-decoration: none;
+    background-color: #5497A7;
+    color: #fff;
+    width: 90%;
+}
+.menu-link:hover{
+    background-color: #0776a7;
+}
+
+.tabs-links{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+.tab-link{
+    display: inline-block;
+    background-color: #5497A7;
+    color: #fff;
+    border: none;
+    padding: 2% 15%;
+    cursor: pointer;
+    font-size: inherit;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-decoration: none;
+    width: 98%;
+}
+.tab-link:hover,
+.tab-links-active{
+    background-color: #0776a7;
+}
+
+.tab{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 100%;
+}
+
+#content{
+    margin-bottom: 100px;
+
+}
+
+
+
+#footer{
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 0px;
+    color: #555;
+}
+
+#suggestion-list{
+    list-style: none;
+}
+#suggestion-list li{
+    background-color: #0776a7;
+    color: white;
+    border-bottom: 1px solid #aaa;
+}
+
+#suggestion-list li:hover{
+    background-color: #1591a7;
+}
+@media only screen and (max-width: 1360px) {
+    body {
+        background: lightblue;
+    }
+    #wrapper {
+        padding: 0;
+
+    }
+}
+
+#weather{
+    float:left;
+    padding: 0%;
+    margin:0%;
+}
+#facebook{
+    float:right;
+    padding: 0%;
+    margin:0%;
+    width:20%;
+}
+
+

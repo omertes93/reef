@@ -1,0 +1,14 @@
+[21-Oct-2022 15:06:13 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/isomerte/public_html/reports_satisfaction.php on line 7
+[21-Oct-2022 15:06:29 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/isomerte/public_html/reports_satisfaction.php on line 8
+[21-Oct-2022 15:09:18 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/isomerte/public_html/reports_satisfaction.php on line 7
+[21-Oct-2022 15:09:20 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/isomerte/public_html/reports_satisfaction.php on line 7
+[21-Oct-2022 15:09:38 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/isomerte/public_html/reports_satisfaction.php on line 7
+[21-Oct-2022 15:11:01 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/isomerte/public_html/reports_satisfaction.php on line 8
+[21-Oct-2022 18:36:45 Asia/Jerusalem] PHP Fatal error:  Call to a member function fetch_array() on boolean in /home/isomerte/public_html/reports_satisfaction.php on line 12
+[21-Oct-2022 16:04:32 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/isomerte/public_html/reports_satisfaction.php on line 22
+[21-Oct-2022 16:05:19 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/isomerte/public_html/reports_satisfaction.php on line 22
+[21-Oct-2022 16:05:20 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/isomerte/public_html/reports_satisfaction.php on line 22
+[21-Oct-2022 16:05:26 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/isomerte/public_html/reports_satisfaction.php on line 22
+[21-Oct-2022 16:05:57 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/isomerte/public_html/reports_satisfaction.php on line 22
+[21-Oct-2022 19:11:35 Asia/Jerusalem] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/isomerte/public_html/reports_satisfaction.php on line 73
+[21-Oct-2022 16:19:20 UTC] PHP Fatal error:  Cannot use [] for reading in /home/isomerte/public_html/reports_satisfaction.php on line 59
