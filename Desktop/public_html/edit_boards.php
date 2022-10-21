@@ -42,7 +42,7 @@ include 'views/header.php';
 ?>
     
 
-    <form action="reports_boards.php" method="post" onsubmit="return validateCustomerData()">
+    <form action="board_stock.php" method="post" onsubmit="return validateCustomerData()">
     <h3>עדכון גלשן # <?php echo $row['id_number']; ?></h3>
                         <table style="width: 100%;">
                             <tr>
@@ -102,7 +102,7 @@ include 'views/header.php';
 {
  if(confirm('Sure to Delete ?'))
  {
-  window.location.href='reports_boards.php?delete_id='+id;
+  window.location.href='stock_managment.php?delete_id='+id;
  }
 }
     </script>
